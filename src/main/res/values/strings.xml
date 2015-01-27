@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Get Permission</string>
+    <string name="ACCESS_CHECKIN_PROPERTIES">Allows read/write access to the “properties” table in
+        the checkin database, to change values that get uploaded.</string>
+</resources>
