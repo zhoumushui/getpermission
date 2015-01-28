@@ -2,9 +2,15 @@
 <resources>
     <!-- A -->
     <string name="ACCESS_ALL_DOWNLOADS">读取下载文件</string>
+    <string name="ACCESS_CACHE_FILESYSTEM">读取和写入缓存文件系统</string>
     <string name="ACCESS_CHECKIN_PROPERTIES">读写检入数据库</string>
     <string name="ACCESS_COARSE_LOCATION">获取粗略位置</string>
+    <string name="ACCESS_COARSE_UPDATES">获取粗略升级:ACCESS_COARSE_UPDATES</string>
+    <string name="ACCESS_DRM">访问数字权限管理技术DRM</string>
+    <string name="ACCESS_DOWNLOAD_MANAGER">获取下载管理</string>
     <string name="ACCESS_FINE_LOCATION">获取精确位置</string>
+    <string name="ACCESS_GPS">访问GPS</string>
+    <string name="ACCESS_LOCATION">访问位置信息</string>
     <string name="ACCESS_LOCATION_EXTRA_COMMANDS">获取额外本地位置提供者</string>
     <string name="ACCESS_MOCK_LOCATION">创建模拟的位置服务用于测试</string>
     <string name="ACCESS_NETWORK_STATE">访问网络状态</string>
@@ -12,9 +18,10 @@
     <string name="ACCESS_SUPERUSER">获取超级用户权限</string>
     <string name="ACCESS_WIFI_STATE">获取WiFi状态</string>
     <string name="ACCOUNT_MANAGER">启动账户认证</string>
-    <string name="AUTHERTICATE_ACCOUTS">充当账户认证管理者</string>
+    <string name="AUTHENTICATE_ACCOUNTS">充当账户认证管理者</string>
     <!-- B -->
     <string name="BATTERY_STATS">获取电池使用的统计信息</string>
+    <string name="BILLING">Play商店应用内付费</string>
     <string name="BIND_APPWIGET">访问AppWidget数据</string>
     <string name="BIND_DEVICE_ADMIN">设备管理服务必须拥有的权限，确保只有系统可以通过设备管理服务与设备进行
         互动（访问设备，数据交互）。</string>
@@ -35,9 +42,11 @@
     <string name="CHANGE_NETWORK_STATE">更改网络连接状态</string>
     <string name="CHANGE_WIFIMULTICAST_STATE">进入Wi-Fi Multicast多播模式</string>
     <string name="CHANGE_WIFI_STATE">更改Wi-Fi连接状态</string>
+    <string name="CHECK_LICENSE">Play商店检查许可</string>
     <string name="CLEAR_APP_CACHE">清理已安装程序的缓存Cache</string>
     <string name="CLEAR_APP_USER_DATA">清理用户数据</string>
     <string name="CONTROL_LOCATION_UPDATES">启用或禁用位置更新提示信息</string>
+    <string name="CREATE_SHORTCUT">创建快捷方式</string>
     <!-- D -->
     <string name="DOWNLOAD_WITHOUT_NOTIFICATION">不告知用户进行下载</string>
     <string name="DELETE_CACHE_FILES">删除Cache文件</string>
@@ -64,13 +73,18 @@
     <string name="INJECT_EVENTS">允许一个应用程序向事件流（事件队列）注入用户事件（keys，touch，tarckball），并且将其传递给窗口。</string>
     <string name="INSTALL_LOCATION_PROVIDER">安装位置服务到位置管理器</string>
     <string name="INSTALL_PCAKAGES">安装应用</string>
+    <string name="INSTALL_PERMISSION">安装权限</string>
     <string name="INTERNAL_SYSTEM_WINDOW">打开系统用户界面窗口</string>
+    <string name="INTERACT_ACROSS_USERS">跨用户执行操作</string>
+    <string name="INTERACT_ACROSS_USERS_FULL">完全跨用户执行操作</string>
     <string name="INTERNET">网络访问</string>
     <!-- K -->
     <string name="KILL_BACKGROUND_PROCESSES">杀死后台应用</string>
     <!-- M -->
     <string name="MANAGE_ACCOUNTS">管理AccountManager中的账户列表</string>
     <string name="MANAGE_APP_TOKENS">管理窗口管理器中的应用程序</string>
+    <string name="MANAGE_DOCUMENTS">管理文档存储空间</string>
+    <string name="MANAGE_NETWORK_POLICY">管理网络策略</string>
     <string name="MASTER_CLEAR">MASTER_CLEAR</string>
     <string name="MODIFY_AUDIO_SETTINGS">更改全局音频设置</string>
     <string name="MODIFY_PHONE_STATE">修改手机状态信息</string>
@@ -82,6 +96,7 @@
     <string name="PERSISTENT_ACTIVITY">设置其activities具有持久性</string>
     <string name="PROCESS_OUTGOING_CALLS">监视、修改、忽略拨出的电话(拨号)</string>
     <!-- R -->
+    <string name="RAISED_THREAD_PRIORITY">改变线程优先级</string>
     <string name="READ_CALENDAR">读取用户日历数据</string>
     <string name="READ_CALL_LOG">读取通话记录</string>
     <string name="READ_CONTACTS">读取联系人列表</string>
@@ -91,20 +106,26 @@
     <string name="READ_LOGS">读取底层系统的日志文件</string>
     <string name="READ_OWNER_DATA">读取设备所有者数据</string>
     <string name="READ_PHONE_STATE">读取手机状态</string>
+    <string name="READ_PROFILE">读取设备上存储的个人资料信息</string>
     <string name="READ_SECURE_SETTINGS">读取安全设置</string>
+    <string name="READ_SETTINGS">获取设置信息</string>
     <string name="READ_SMS">读取短信</string>
     <string name="READ_SYNC_SETTINGS">读取同步设置</string>
     <string name="READ_SYNC_STATS">读取同步状态</string>
+    <string name="READ_SOCIAL_STREAM">读取社交动态</string>
     <string name="REBOOT">重启设备</string>
+    <string name="C2DM_RECEIVE">接收C2DM消息</string>
     <string name="RECEIVE_BOOT_COMPLETED">获取系统完全启动广播</string>
     <string name="RECEIVE_MMS">监控并处理收到的彩信</string>
     <string name="RECEIVE_SMS">接收短信</string>
     <string name="RECEIVE_WAP_PUSH">处理收到的WAP PUSH消息</string>
+    <string name="RECEIVE_USER_PRESENT">用户使用设备的广播</string>
     <string name="RECORD_AUDIO">录音</string>
     <string name="REORDER_TASKS">改变任务的Z-order，屏幕堆叠顺序</string>
     <string name="READ_EXTERNAL_STORAGE">读取外部存储设备</string>
     <string name="RESTART_PACKAGES">RESTART_PACKAGES [This Feature is Deprecated]</string>
     <string name="LAUNCHER_READ_SETTINGS">读取Launcher设置</string>
+    <string name="RUN_INSTRUMENTATION">允许应用程序开始运行某个包</string>
     <!-- S -->
     <string name="SEND_SMS">发送短信</string>
     <string name="SET_ACTIVITY_WATHCER">在全局系统中监控activities是如何被启动的</string>
@@ -119,10 +140,12 @@
     <string name="SET_WALLPAPER">设置壁纸</string>
     <string name="SET_WALLPAPER_HINTS">设置桌面提示</string>
     <string name="SIGNAL_PERSISTENT_PROCESSES">请求发送信号给所有持续进程</string>
+    <string name="START_BACKGROUND_SERVICE">启动后台服务</string>
     <string name="STATUS_BAR">打开、关闭、禁用状态栏和状态栏图标</string>
     <string name="SUBSCRIBED_FEEDS_READ">读取订阅RSS feeds的ContentProvider</string>
     <string name="SUBSRIBED_FEEDS_WRITE">修改订阅RSS feeds的ContentProvider</string>
     <string name="SYSYTEM_ALERT_WINDOW">打开TYPE_SYSTEM_ALERT类型的系统警告（提示）窗口，并置于顶层显示</string>
+    <string name="SYSTEM_OVERLAY_WINDOW">在屏幕顶层显示</string>
     <!-- U -->
     <string name="UPDATE_DEVICE_STATS">更新设备统计信息</string>
     <string name="USE_CREDENTIALS">向AccountManager申请授权标记</string>
@@ -139,7 +162,9 @@
     <string name="WRITE_EXTERNAL_STORAGE">存储数据到外部存储设备</string>
     <string name="WRITE_GSERVICES">修改Google地图服务</string>
     <string name="WRITE_HISTORY_BOOKMARKS">修改用户浏览器历史记录和书签</string>
+    <string name="WRITE_INTERNAL_STORAGE">写数据到内部存储</string>
     <string name="WRITE_OWNER_DATA">修改设备所有者数据</string>
+    <string name="WRITE_PROFILE">修改用户信息</string>
     <string name="WRITE_SECURE_SETTINGS">修改系统安全设置</string>
     <string name="WRITE_SETTINGS">修改系统设置</string>
     <string name="WRITE_SMS">编写短信</string>
@@ -147,5 +172,28 @@
     <string name="WAP_PUSH">发送收到WAP Push广播</string>
     <string name="WRITE_MEDIA_STORAGE">写入媒体存储</string>
     <string name="LAUNCHER_WRITE_SETTINGS">修改Launcher设置</string>
+
+    <!-- ToDo -->
+    <string name="ACCESS_WIMAX_STATE">使用微波互联</string>
+    <string name="CHANGE_WIMAX_STATE">变更微波互联</string>
+    <string name="FORCE_STOP_PACKAGES">强制停止应用</string>
+    <string name="PACKAGE_USAGE_STATS">查看应用使用状态</string>
+    <string name="MOVE_PACKAGE">移动应用</string>
+    <string name="BACKUP">备份数据</string>
+    <string name="MANAGE_USB">管理USB</string>
+    <string name="SET_POINTER_SPEED">设定指针速度</string>
+    <string name="SET_KEYBOARD_LAYOUT">设定键盘布局</string>
+    <string name="MANAGE_USERS">管理用户</string>
+    <string name="CONFIGURE_WIFI_DISPLAY">配置WiFi显示</string>
+    <string name="ACCESS_NOTIFICATIONS">获取通知</string>
+    <string name="MANAGE_DEVICE_ADMINS">管理设备管理员</string>
+    <string name="ACCESS_DEV_STORAGE">访问DEV存储</string>
+    <string name="UPDATE_APP_OPS_STATS">升级应用OPS状态：UPDATE_APP_OPS_STATS</string>
+    <string name="SET_ALARM">设定闹钟</string>
+    <string name="SEND_SMS_NO_CONFIRMATION">静默发送短信</string>
+    <string name="ALLSHARE_CAST_SERVICE">共享传输服务：ALLSHARE_CAST_SERVICE</string>
+    <string name="STOP_APP_SWITCHES">停止应用切换：STOP_APP_SWITCHES</string>
+    <string name="RECORD_VIDEO">录制视频</string>
+    <string name="SEND_DOWNLOAD_COMPLETED_INTENTS">发送下载完成通知</string>
 
 </resources>
