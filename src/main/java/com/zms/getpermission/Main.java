@@ -1,15 +1,12 @@
 package com.zms.getpermission;
 
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PermissionGroupInfo;
 import android.content.pm.PermissionInfo;
 import android.content.pm.ResolveInfo;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,15 +32,17 @@ public class Main extends ListActivity {
         query.addCategory("android.intent.category.LAUNCHER");
         List<ResolveInfo> resolves = pm.queryIntentActivities(query, PackageManager.GET_ACTIVITIES);
 
-        dataAppList.add("");
+        dataAppList.add(""); // take up the position, refresh it after getting dataApp size
         for (int i = 0; i < resolves.size(); i++) {
-            ResolveInfo info = resolves.get(i);
-            String packageName = info.loadLabel(pm).toString();
+            ResolveInfo resolveInfo = resolves.get(i);
+            String packageName = resolveInfo.loadLabel(pm).toString();
             String[] permission;
             try {
-                permission = pm.getPackageInfo(info.activityInfo.packageName,
-                        PackageManager.GET_PERMISSIONS).requestedPermissions; //获取权限列表
-                if (isSystemApp(info)) { // 是否为系统应用
+                // get permission list
+                permission = pm.getPackageInfo(resolveInfo.activityInfo.packageName,
+                        PackageManager.GET_PERMISSIONS).requestedPermissions;
+                // app is system app ?
+                if (isSystemApp(resolveInfo)) {
                     systemAppList.add(packageName);
                 } else {
                     dataAppList.add(packageName);
@@ -72,8 +71,8 @@ public class Main extends ListActivity {
                         stringBuilder.append(getPermissionDetailSys(permission[i]) + "\n");
                     }
                     Intent intent = new Intent(Main.this, ShowPermission.class);
-                    intent.putExtra("strPermission", dataAppList.get(position) + " has " + permission.length
-                            + " Permission(s):\n\n" + stringBuilder);
+                    intent.putExtra("strPermission", dataAppList.get(position) + " has " +
+                            permission.length + " Permission(s):\n\n" + stringBuilder);
                     startActivity(intent);
                 } catch (Exception e) {
                     // ToDo:Handle Exception
@@ -90,32 +89,37 @@ public class Main extends ListActivity {
         }
     }
 
-
-    public String getPermissionDetailSys(String strPermission) {
-        String strPermissionInfo = "No Description";
+    /**
+     * use system func to get normal permission info
+     *
+     * @param permissionName
+     * @return string
+     */
+    public String getPermissionDetailSys(String permissionName) {
+        String strPermissionInfo = "";
         try {
             PackageManager pm = Main.this.getPackageManager();
-            PermissionInfo tmpPermInfo = pm.getPermissionInfo(strPermission, 0);//通过permName得到该权限的详细信息
-            PermissionGroupInfo pgi = pm.getPermissionGroupInfo(
-                    tmpPermInfo.group, 0);//权限分为不同的群组，通过权限名，我们得到该权限属于什么类型的权限。
+            // get permission info by name
+            PermissionInfo permissionInfo = pm.getPermissionInfo(permissionName, 0);
+            // get permission group
+            PermissionGroupInfo permissionGroupInfo = pm.getPermissionGroupInfo(
+                    permissionInfo.group, 0);
 
-            //tvPermission.append(i + "-" + permName + "\n"); // 权限名
-            //tvPermission.append(i + "-" + pgi.loadLabel(pm).toString() + "\n"); // 权限分组
-            //tvPermission.append(i + "-" + tmpPermInfo.loadLabel(pm).toString() + "\n");
-            //tvPermission.append(i + "-" + tmpPermInfo.loadDescription(pm).toString() + "\n");
-            strPermissionInfo = "[" + pgi.loadLabel(pm).toString() + "] " + tmpPermInfo.loadLabel(pm).toString() + ":\n" +
-                    tmpPermInfo.loadDescription(pm).toString() + "\n";
+            strPermissionInfo = "[" + permissionGroupInfo.loadLabel(pm).toString() + "] " +
+                    permissionInfo.loadLabel(pm).toString() + ":\n" +
+                    permissionInfo.loadDescription(pm).toString() + "\n";
         } catch (PackageManager.NameNotFoundException e) {
-            return getPermissionDetail(strPermission) + "\n";
+            // use our func if permission info not matched
+            return getPermissionDetail(permissionName) + "\n";
         }
         return strPermissionInfo;
     }
 
     /**
-     * This function is too long...
+     * if getPermissionDetailSys() is execute catch part, this func will run
      *
      * @param strPermission
-     * @return
+     * @return description of permission, or permission name if not matched.
      */
     public String getPermissionDetail(String strPermission) {
         switch (strPermission) {
